@@ -50,6 +50,8 @@ export interface AnalysisResult {
   topInstitutions: InstitutionCount[];
   countryDistribution: CountryCount;
   yearDistribution: YearDistribution;
+  publications: Publication[];
+  authorshipCountriesCount: number;
 }
 
 function analyzePublications(data: PublicationData): AnalysisResult {
@@ -58,6 +60,7 @@ function analyzePublications(data: PublicationData): AnalysisResult {
   const institutionCounts = new Map<string, InstitutionCount>();
   const countryCounts: CountryCount = {};
   const yearCounts: YearDistribution = {};
+  let authorshipCountriesCount = 0;
 
   // Process each publication
   data.results.forEach((publication) => {
@@ -92,6 +95,7 @@ function analyzePublications(data: PublicationData): AnalysisResult {
 
       // Count countries
       authorship.countries?.forEach((country) => {
+        authorshipCountriesCount += 1;
         countryCounts[country] = (countryCounts[country] || 0) + 1;
       });
     });
@@ -111,6 +115,8 @@ function analyzePublications(data: PublicationData): AnalysisResult {
     topInstitutions,
     countryDistribution: countryCounts,
     yearDistribution: yearCounts,
+    publications: data.results,
+    authorshipCountriesCount,
   };
 }
 
