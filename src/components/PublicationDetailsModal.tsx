@@ -2,19 +2,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import Button from "./Button";
 import getPublicationAuthors from "../scripts/getPublicationAuthors";
 import { Publication } from "../interfaces";
+import truncateByWords from "../scripts/truncateByWords";
 
 interface PublicationDetailsModalProps {
   publication: Publication;
   onClose: () => void;
 }
-
-const truncateText = (text: string, wordLimit: number): string => {
-  const words = text.split(" ");
-  if (words.length <= wordLimit) {
-    return text;
-  }
-  return words.slice(0, wordLimit).join(" ") + "...";
-};
 
 const getApaCitation = (publication: Publication): string => {
   const authors = getPublicationAuthors(publication);
@@ -77,7 +70,7 @@ const PublicationDetailsModal: React.FC<PublicationDetailsModalProps> = ({
               Cited {publication.cited_by_count} times
             </div>
             <div className="mt-4 text-base">
-              {truncateText(publication.abstract, 40)}
+              {truncateByWords(publication.abstract, 40)}
             </div>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
