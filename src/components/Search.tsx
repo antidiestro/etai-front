@@ -31,7 +31,6 @@ export default function Search() {
           placeholder="Ask a question or enter any topic..."
           ref={inputRef}
           type="text"
-          autoFocus
         />
       </form>
       <Suggestions />
