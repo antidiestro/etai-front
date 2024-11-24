@@ -74,7 +74,7 @@ const PublicationDetailsModal: React.FC<PublicationDetailsModalProps> = ({
             </div>
             <div className="text-sm">{byline}</div>
             <div className="text-sm text-neutral-500 mt-0.5">
-              Citado {publication.cited_by_count} veces
+              Cited {publication.cited_by_count} times
             </div>
             <div className="mt-4 text-base">
               {truncateText(publication.abstract, 40)}
@@ -82,12 +82,12 @@ const PublicationDetailsModal: React.FC<PublicationDetailsModalProps> = ({
           </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
             <Button
-              label="Visitar fuente"
+              label="Go to source"
               icon="open_in_new"
               onClick={() => window.open(publication.doi)}
             />
             <Button
-              label={copied ? "¡Copiado!" : "Copiar cita"}
+              label={copied ? "Copied!" : "Copy citation"}
               icon={copied ? "check" : "content_copy"}
               onClick={copyCitation}
               variant="secondary"

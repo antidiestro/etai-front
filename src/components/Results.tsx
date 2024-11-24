@@ -5,6 +5,7 @@ import MainSummary from "./MainSummary";
 import KeyFindings from "./KeyFindings";
 import PublicationDetailsModal from "./PublicationDetailsModal";
 import Bibliography from "./Bibliography";
+import RelatedQueries from "./RelatedQueries";
 
 const Loader: React.FC = () => {
   const { facts, loadingFacts } = useAppContext();
@@ -42,6 +43,7 @@ export default function Results() {
           <div className="pt-4 flex flex-col gap-12 pb-16">
             <MainSummary />
             <KeyFindings />
+            <RelatedQueries />
             <Bibliography />
           </div>
         )

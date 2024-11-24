@@ -8,7 +8,10 @@ export default function KeyFindings() {
 
   return (
     <div>
-      <h2>Hallazgos clave</h2>
+      <h2>Key Findings</h2>
+      <div className="-mt-2 mb-5">
+        These are the most important takeaways from the relevant literature.
+      </div>
       {summary!.key_findings.map((finding: Finding) => (
         <div key={finding.title} className="bg-[#F5F3EE] mb-3 py-4 rounded-md">
           <div

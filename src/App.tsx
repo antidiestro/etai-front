@@ -19,7 +19,7 @@ function App() {
             onClick={() => appContextValue.setQuery("")}
             className={`absolute right-6 flex items-center justify-center rounded-full gap-2 bg-orange-600 h-[36px] px-4 text-white text-sm font-medium`}
           >
-            Nueva búsqueda
+            New Session
           </button>
         )}
       </div>

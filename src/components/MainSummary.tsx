@@ -11,8 +11,8 @@ export default function MainSummary() {
     <div>
       {!!totalPublicationsCount && (
         <div className="text-[15px] text-neutral-400 mb-2">
-          {new Intl.NumberFormat().format(totalPublicationsCount)} artículos
-          encontrados
+          {new Intl.NumberFormat().format(totalPublicationsCount)} articles
+          found
         </div>
       )}
 

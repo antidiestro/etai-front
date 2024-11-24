@@ -1,5 +1,5 @@
 import { useState } from "react";
-import suggestions from "../suggestions.json";
+import suggestions from "../suggestions-english.json";
 import { shuffleArray } from "./AppearingTextRandomizer";
 import { useAppContext } from "../contexts/AppContext";
 

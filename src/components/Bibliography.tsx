@@ -6,7 +6,10 @@ const Bibliography: React.FC = () => {
 
   return (
     <div>
-      <h2>Bibliografía</h2>
+      <h2>Bibliography</h2>
+      <div className="-mt-2 mb-5">
+        The articles that were used to generate this summary.
+      </div>
       <div className="flex flex-col gap-2.5">
         {filteredBibliography.map((publication, index) => {
           const author = getPublicationAuthors(publication);
