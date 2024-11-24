@@ -37,7 +37,7 @@ interface InstitutionCount {
   count: number;
 }
 
-interface CountryCount {
+export interface CountryCount {
   [country: string]: number;
 }
 

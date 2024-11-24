@@ -11,6 +11,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/geojson": "^7946.0.14",
+    "countries-list": "^3.1.1",
+    "d3": "^7.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
@@ -19,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@types/d3": "^7.4.3",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
