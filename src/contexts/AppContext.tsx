@@ -106,12 +106,15 @@ export const useAppContextValue = (): AppContextValue => {
     () =>
       summary
         ? [
-            ...(summary.query_answer
-              ? getLinksFromMarkdown(summary.query_answer)
-              : []),
-            ...summary.key_findings
-              .map((finding) => getLinksFromMarkdown(finding.summary))
-              .flat(),
+            ...new Set([
+              ...getLinksFromMarkdown(summary.introduction_summary),
+              ...(summary.query_answer
+                ? getLinksFromMarkdown(summary.query_answer)
+                : []),
+              ...summary.key_findings
+                .map((finding) => getLinksFromMarkdown(finding.summary))
+                .flat(),
+            ]),
           ]
         : [],
     [summary]
