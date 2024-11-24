@@ -13,7 +13,7 @@ function App() {
   return (
     <AppContext.Provider value={appContextValue}>
       <div className={`header ${!showingResults && "sm-centered"}`}>
-        <img src="/logo.svg" alt="logo" className="h-5" />
+        <img src="/logo.svg" alt="logo" className="h-5 relative top-0.5" />
         {showingResults && (
           <button
             onClick={() => appContextValue.setQuery("")}

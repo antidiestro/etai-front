@@ -64,14 +64,16 @@ export default function Search() {
   }, [emojis.length]);
 
   return (
-    <div className="flex-1 flex flex-col justify-center -mt-20">
+    <div className="flex-1 flex flex-col justify-center -mt-24">
       <div className="mb-6 sm:mb-10">
-        <div className="text-orange-600 text-[32px] sm:text-[48px] tracking-tight leading-tight font-medium sm:text-center">
-          {preventWidows("What do you want to learn today?") +
-            " " +
-            activeEmoji}
+        <div className="text-orange-600 text-[32px] sm:text-[36px] tracking-tight leading-tight font-medium sm:text-center">
+          {preventWidows(
+            preventWidows("What do you want to learn today?") +
+              " " +
+              activeEmoji
+          )}
         </div>
-        <div className="mx-auto max-w-sm sm:text-lg sm:leading-7 sm:text-center mt-3">
+        <div className="mx-auto max-w-2xl sm:max-w-md sm:text-lg sm:leading-7 sm:text-center mt-3">
           {preventWidows(
             "Search, browse and understand academic literature with AI-generated summaries."
           )}
@@ -85,7 +87,7 @@ export default function Search() {
         }}
       >
         <input
-          className="w-full bg-white border border-zinc-400/30 placeholder-zinc-400 rounded-lg h-[52px] shadow-xl shadow-zinc-600/5 px-4 focus:outline-black sm:h-[64px] sm:px-5 sm:text-lg"
+          className="w-full bg-white border border-zinc-400/30 placeholder-zinc-400 rounded-full h-[52px] shadow-xl shadow-zinc-600/5 px-5 focus:outline-black sm:h-[64px] sm:px-6 sm:text-lg"
           placeholder="Ask a question or enter any topic..."
           ref={inputRef}
           type="text"
