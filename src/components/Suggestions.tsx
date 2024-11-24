@@ -9,7 +9,7 @@ const SuggestionsTerm = ({ term }: { term: string }) => {
   return (
     <a
       key={term}
-      href="#"
+      href="javascript:void(0)"
       onClick={() => setQuery(term.split(" ").slice(1).join(" "))}
       className="flex shrink-0 text-sm  text-neutral-700 hover:opacity-80 rounded-full m-1 hover:no-underline"
     >

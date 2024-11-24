@@ -2,7 +2,7 @@ import { useAppContext } from "../contexts/AppContext";
 import getPublicationAuthors from "../scripts/getPublicationAuthors";
 
 const Bibliography: React.FC = () => {
-  const { filteredBibliography } = useAppContext();
+  const { filteredBibliography, setOpenPublication } = useAppContext();
 
   return (
     <div>
@@ -17,7 +17,12 @@ const Bibliography: React.FC = () => {
             <div key={publication.id} className="flex gap-2">
               <div>{index + 1}.</div>
               <div className="flex-1">
-                <a href={"#"}>{publication.title}</a>
+                <a
+                  href="javascript:void(0)"
+                  onClick={() => setOpenPublication(publication)}
+                >
+                  {publication.title}
+                </a>
                 <div>
                   {[author, "(" + publication.pub_year + ")"].join(", ")}
                 </div>
